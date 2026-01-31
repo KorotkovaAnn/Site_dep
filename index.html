@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Прототип</title>
+
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body class="theme-light">
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="brand">
+          <div class="brand__logo">Dep</div>
+          <div class="brand__text">
+            <div class="brand__title">Цифровая платформа</div>
+            <div class="brand__subtitle">прогнозирования</div>
+          </div>
+        </div>
+
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <nav class="nav">
+        <button class="nav__item nav__item--home is-active" data-page="home">
+          <i class="fa-solid fa-house"></i>
+          <span>Главная</span>
+        </button>
+
+        <button class="nav__item nav__item--dashboards" data-page="dashboards">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Дашборды</span>
+        </button>
+
+        <div class="nav__divider"></div>
+
+        <button class="nav__item nav__item--muted is-disabled" title="Скоро">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Показатели</span>
+        </button>
+        <button class="nav__item nav__item--muted is-disabled" title="Скоро">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Прогнозы</span>
+        </button>
+        <button class="nav__item nav__item--muted is-disabled" title="Скоро">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>О проекте</span>
+        </button>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="pill">Light • Glass UI</div>
+        <div class="hint">Прототип интерфейса</div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- HOME PAGE -->
+      <section id="home" class="page is-active">
+        <div class="page__bg">
+          <!-- Bokeh -->
+          <div class="bokeh bokeh--a"></div>
+          <div class="bokeh bokeh--b"></div>
+          <div class="bokeh bokeh--c"></div>
+
+          <!-- “Нарисованный” мост (SVG) -->
+          <svg class="bridge" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 310 C200 300, 400 320, 600 310 C800 300, 1000 320, 1200 310"
+                  fill="none" stroke="rgba(116,79,52,0.35)" stroke-width="2"/>
+
+            <path d="M70 260 L1130 260" fill="none" stroke="rgba(116,79,52,0.55)" stroke-width="10" stroke-linecap="round"/>
+
+            <path d="M420 80 L420 270" fill="none" stroke="rgba(116,79,52,0.6)" stroke-width="12" stroke-linecap="round"/>
+            <path d="M460 95 L460 270" fill="none" stroke="rgba(116,79,52,0.6)" stroke-width="10" stroke-linecap="round"/>
+            <path d="M410 90 L470 90" fill="none" stroke="rgba(116,79,52,0.6)" stroke-width="10" stroke-linecap="round"/>
+
+            <g stroke="rgba(116,79,52,0.45)" stroke-width="2">
+              <path d="M440 100 L140 260"/>
+              <path d="M440 110 L210 260"/>
+              <path d="M440 120 L280 260"/>
+              <path d="M440 130 L350 260"/>
+              <path d="M440 105 L560 260"/>
+              <path d="M440 115 L650 260"/>
+              <path d="M440 125 L740 260"/>
+              <path d="M440 135 L830 260"/>
+              <path d="M440 145 L920 260"/>
+              <path d="M440 155 L1010 260"/>
+              <path d="M440 165 L1100 260"/>
+            </g>
+
+            <path d="M0 285 L1200 285" fill="none" stroke="rgba(116,79,52,0.25)" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <!-- HERO -->
+        <header class="hero">
+          <div class="hero__text glass shine">
+            <div class="tag">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>B2G • мониторинг • прогноз • интерпретация</span>
+            </div>
+
+            <h1>Цифровая платформа мониторинга и прогнозирования социально-экономических показателей региона</h1>
+
+            <p class="lead">
+              Мониторинг ключевых метрик, прогноз на 3–5 лет, анализ факторов и интерпретируемость моделей
+              для поддержки управленческих решений и стратегического планирования.
+            </p>
+
+            <div class="hero__actions">
+              <button class="btn" id="goDashboards">
+                Перейти к дашбордам <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button class="btn btn--ghost" id="learnMore">
+                О возможностях
+              </button>
+              <button class="btn btn--ghost" id="downloadMock">
+                Скачать отчёт (пример) <i class="fa-regular fa-file-pdf"></i>
+              </button>
+            </div>
+
+            <div class="hero__bullets">
+              <div class="bullet"><i class="fa-solid fa-check"></i> Единое окно для показателей и прогнозов</div>
+              <div class="bullet"><i class="fa-solid fa-check"></i> Сравнение факта и прогноза по годам</div>
+              <div class="bullet"><i class="fa-solid fa-check"></i> SHAP-вклад факторов (показатели, оказавшие наибольшее влияние)</div>
+              <div class="bullet"><i class="fa-solid fa-check"></i> Подготовка материалов для управленческих решений</div>
+            </div>
+          </div>
+
+          <div class="hero__cards">
+            <article class="card glass shine">
+              <div class="card__icon"><i class="fa-solid fa-chart-column"></i></div>
+              <div class="card__title">Анализ динамики</div>
+              <div class="card__text">Сравнение факта и прогноза, тренды и устойчивость изменения показателя.</div>
+            </article>
+
+            <article class="card glass shine">
+              <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="card__title">Прогноз на 4 года</div>
+              <div class="card__text">Ключевые значения по выбранному показателю + быстрые выводы.</div>
+            </article>
+
+            <article class="card glass shine">
+              <div class="card__icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="card__title">Интерпретация (SHAP)</div>
+              <div class="card__text">Вклад факторов в прогноз: что повышает, а что снижает.</div>
+            </article>
+
+            <article class="card glass shine">
+              <div class="card__icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="card__title">Поддержка решений</div>
+              <div class="card__text">Понятные выводы для стратегического планирования и мониторинга.</div>
+            </article>
+          </div>
+        </header>
+
+        <!-- KPI STRIP -->
+        <section class="kpi-grid">
+          <div class="kpi glass shine">
+            <div class="kpi__label">Показателей в витрине</div>
+            <div class="kpi__value">48</div>
+            <div class="kpi__meta">экономика • инвестиции • строительство</div>
+          </div>
+          <div class="kpi glass shine">
+            <div class="kpi__label">Горизонт прогноза</div>
+            <div class="kpi__value">+4 года</div>
+            <div class="kpi__meta">сценарии • сравнение • контроль</div>
+          </div>
+          <div class="kpi glass shine">
+            <div class="kpi__label">Обновление данных</div>
+            <div class="kpi__value">ежемес.</div>
+            <div class="kpi__meta">автозагрузка • очистка • версии</div>
+          </div>
+          <div class="kpi glass shine">
+            <div class="kpi__label">Интерпретируемость</div>
+            <div class="kpi__value">SHAP</div>
+            <div class="kpi__meta">вклад факторов • объяснения</div>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS + QUICK ACTIONS -->
+        <section class="grid-2">
+          <div class="panel glass shine">
+            <div class="panel__title">
+              Как это работает
+              <span class="badge">поток данных</span>
+            </div>
+
+            <ol class="steps">
+              <li>
+                <span class="steps__dot">1</span>
+                <div>
+                  <b>Загрузка / интеграция</b>
+                  <div class="muted">Подключение источников (витрины, API, выгрузки), проверка формата.</div>
+                </div>
+              </li>
+              <li>
+                <span class="steps__dot">2</span>
+                <div>
+                  <b>Подготовка данных</b>
+                  <div class="muted">Очистка, агрегация, формирование временных рядов и факторов.</div>
+                </div>
+              </li>
+              <li>
+                <span class="steps__dot">3</span>
+                <div>
+                  <b>Прогнозирование</b>
+                  <div class="muted">Построение модели, прогноз на +4 года, оценка качества.</div>
+                </div>
+              </li>
+              <li>
+                <span class="steps__dot">4</span>
+                <div>
+                  <b>Объяснимость</b>
+                  <div class="muted">SHAP-анализ: какие факторы влияют на итоговый прогноз.</div>
+                </div>
+              </li>
+              <li>
+                <span class="steps__dot">5</span>
+                <div>
+                  <b>Визуализация</b>
+                  <div class="muted">Графики, KPI, карточки, отчёты для управленческих решений.</div>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="panel glass shine">
+            <div class="panel__title">
+              Быстрые действия
+              <span class="badge">шаблоны</span>
+            </div>
+
+            <div class="quick">
+              <button class="quick__btn" id="quickOpenInvest">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <div>
+                  <b>Инвестиции</b>
+                  <div class="muted">Открыть дашборд</div>
+                </div>
+              </button>
+
+              <button class="quick__btn" id="quickOpenDeflator">
+                <i class="fa-solid fa-percent"></i>
+                <div>
+                  <b>Индекс-дефлятор</b>
+                  <div class="muted">Открыть дашборд</div>
+                </div>
+              </button>
+
+              <button class="quick__btn" id="quickScenario">
+                <i class="fa-solid fa-sliders"></i>
+                <div>
+                  <b>Сценарий</b>
+                  <div class="muted">Что-если (макет)</div>
+                </div>
+              </button>
+
+              <button class="quick__btn" id="quickExport">
+                <i class="fa-solid fa-file-export"></i>
+                <div>
+                  <b>Экспорт</b>
+                  <div class="muted">PDF/Excel (макет)</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- UPDATES + FAQ -->
+        <section class="grid-2">
+          <div class="panel glass shine">
+            <div class="panel__title">
+              Последние обновления
+              <span class="badge">логи</span>
+            </div>
+
+            <div class="updates">
+              <div class="updates__item">
+                <div class="updates__dot"></div>
+                <div>
+                  <b>Обновлена витрина показателей</b>
+                  <div class="muted">Добавлены новые срезы по инвестициям и демографии.</div>
+                </div>
+                <span class="updates__time">сегодня</span>
+              </div>
+
+              <div class="updates__item">
+                <div class="updates__dot"></div>
+                <div>
+                  <b>Модуль SHAP-интерпретации</b>
+                  <div class="muted">Появились подсказки и топ-факторы для прогноза.</div>
+                </div>
+                <span class="updates__time">вчера</span>
+              </div>
+
+              <div class="updates__item">
+                <div class="updates__dot"></div>
+                <div>
+                  <b>Оптимизирована визуализация</b>
+                  <div class="muted">Улучшен hover-tooltip и читаемость графиков.</div>
+                </div>
+                <span class="updates__time">2 дн. назад</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel glass shine">
+            <div class="panel__title">
+              Частые вопросы
+              <span class="badge">FAQ</span>
+            </div>
+
+          <div class="faq">
+            <details class="faq__item">
+              <summary>Что считается «фактом», а что — «прогнозом»?</summary>
+              <div class="muted">
+                «Факт» — официальные/исторические значения показателя за прошедшие годы. «Прогноз» — расчёт модели на будущие периоды (+4 года),
+                визуально отделён пунктиром и отдельной серией на графике.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>Можно ли доверять прогнозу, если резко меняется внешняя среда?</summary>
+              <div class="muted">
+                При резких изменениях (ставка, инфляция, санкционные/логистические факторы) модель может ошибаться.
+                В таких случаях важно смотреть SHAP: какие факторы «тянут» прогноз вверх/вниз и насколько.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>SHAP — это «причина», почему так будет?</summary>
+              <div class="muted">
+                SHAP показывает вклад факторов в решение модели (объяснение модели), а не причинно-следственную связь.
+                Это помогает интерпретировать прогноз и выявлять ключевые драйверы, но не заменяет экспертную оценку.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>Почему вклад факторов бывает отрицательным?</summary>
+              <div class="muted">
+                Отрицательный вклад означает, что фактор в текущей конфигурации снижает прогнозируемое значение.
+                Например, рост ключевой ставки может снижать инвестиции — модель отражает это в объяснениях.
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary>Как быстро найти «главный драйвер» изменения?</summary>
+              <div class="muted">
+                Откройте SHAP-блок: сверху — факторы с максимальным вкладом.
+                Для управленческих выводов смотрите 3–5 верхних факторов и их знак (+/–).
+              </div>
+            </details>
+          </div>
+
+        </section>
+      </section>
+
+      <!-- DASHBOARDS PAGE -->
+      <section id="dashboards" class="page">
+        <div class="dash-header">
+          <div class="dash-header__left">
+            <h2>Дашборды</h2>
+            <div class="sub">Выберите показатель — прогноз и SHAP-анализ обновятся автоматически</div>
+          </div>
+        </div>
+
+        <div class="dash-stack">
+          <!-- 1) Выбор показателя -->
+          <section class="panel glass shine full">
+            <div class="panel__title">
+              Параметры
+              <span class="badge">фильтры</span>
+            </div>
+
+            <div class="filters">
+              <label class="control">
+                <span>Показатель</span>
+                <select id="indicatorSelect">
+                  <option value="deflator">Индекс-дефлятор</option>
+                  <option value="investments">Общий объём инвестиций</option>
+                  <option value="grp">ВРП</option>
+                  <option value="unemployment">Уровень безработицы</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- 2) Прогноз + KPI -->
+          <section class="panel glass shine full">
+            <div class="panel__title">
+              Прогноз и сводка
+              <span class="badge" id="unitBadge">—</span>
+            </div>
+
+            <div class="forecast-wide">
+              <div class="forecast-wide__left">
+                <div class="forecast" id="forecastCards"></div>
+              </div>
+
+              <div class="forecast-wide__right">
+                <div class="mini-kpis">
+                  <div class="mini-kpi">
+                    <div class="mini-kpi__label">Текущий год</div>
+                    <div class="mini-kpi__value" id="kpiCurrentYear">—</div>
+                  </div>
+                  <div class="mini-kpi">
+                    <div class="mini-kpi__label">Текущее значение</div>
+                    <div class="mini-kpi__value" id="kpiCurrentValue">—</div>
+                  </div>
+                  <div class="mini-kpi">
+                    <div class="mini-kpi__label">Изменение (год к году)</div>
+                    <div class="mini-kpi__value" id="kpiYoY">—</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3) Динамика -->
+          <section class="panel glass shine full">
+            <div class="panel__title">Динамика показателя (факт + прогноз)</div>
+            <div class="chart-wrap chart-wrap--wide">
+              <canvas id="trendChart"></canvas>
+              <div id="trendTooltip" class="tooltip"></div>
+            </div>
+          </section>
+
+          <!-- 4) SHAP -->
+          <section class="panel glass shine full">
+            <div class="panel__title">Вклад факторов в прогноз (SHAP)</div>
+            <div class="chart-wrap chart-wrap--wide chart-wrap--tall">
+              <canvas id="shapChart"></canvas>
+            </div>
+            <div class="note">
+              Положительный вклад (зелёный) повышает прогноз, отрицательный (красный) — снижает.
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
