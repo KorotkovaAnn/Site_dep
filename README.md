@@ -20,7 +20,7 @@ $ npm run dev
 
 ## Стек
 
-- **Язык:*](https://github.com/KorotkovaAnn/Site_dep)* [TypeScript](https://www.typescriptlang.org/docs/) — `^5.9.3`
+- **Язык:** [TypeScript] (https://www.typescriptlang.org/docs/) — `^5.9.3`
 - **Фреймворк:** [React](https://react.dev/) — `^18.3.1`
 - **Стейт менеджер:** [MobX](https://mobx.js.org/react-integration.html) — `^6.15.0`
 - **Сборщик:** [Vite](https://vite.dev/guide/) — `vite@7.3.1`
