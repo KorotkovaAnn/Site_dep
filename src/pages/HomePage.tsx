@@ -8,7 +8,8 @@ export function HomePage() {
   }, [])
 
   return (
-    <div className="home-page">
+    <div className="home-page home-page-with-bg">
+      
       <HeroSection />
       <CapabilitiesAndMetrics />
       <ProcessAndQuickActions />
@@ -321,7 +322,7 @@ function CapabilitiesAndMetrics() {
 function ProcessAndQuickActions() {
   return (
     <section className="home-grid">
-      <div className="glass-panel timeline-section">
+      <div className="timeline-section glass-panel">
         <h2 className="home-section-title">Как это работает</h2>
         <p className="home-section-subtitle">
           Пять шагов от сбора данных до готового отчёта для руководства региона.

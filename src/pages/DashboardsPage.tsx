@@ -39,7 +39,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
 
       <section className="glass-panel" style={{ padding: '14px 18px 16px', marginBottom: 18 }}>
         <div className="dashboard-filters">
-          <div className="dashboard-filter-group">
+          <div className="dashboard-filter-group ">
             <div className="dashboard-filter-label">Показатель</div>
             <select
               className="dashboard-select"
@@ -115,7 +115,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
       </section>
 
       <section className="dashboard-grid">
-        <aside className="glass-panel dashboard-forecast-cards">
+        <aside className="dashboard-forecast-cards glass-panel">
           <h2 className="home-section-title">Прогноз по годам</h2>
           <p className="home-section-subtitle">
             Прогноз на 4 года вперёд с динамикой относительно текущего значения.
@@ -187,7 +187,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
           </div>
         </aside>
 
-        <section className="glass-panel dashboard-chart-panel">
+        <section className="dashboard-chart-panel glass-panel">
           <h2 className="home-section-title">Динамика показателя и прогноз</h2>
           <p className="home-section-subtitle">
             Синяя линия — фактические значения, фиолетовая — прогноз с доверительным интервалом.
@@ -300,7 +300,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
       </section>
 
       <section className="dashboard-grid" style={{ marginTop: 18 }}>
-        <section className="glass-panel shap-panel">
+        <section className="shap-panel glass-panel">
           <h2 className="home-section-title">SHAP-анализ вклада факторов</h2>
           <p className="home-section-subtitle">
             Положительный вклад (зелёный) увеличивает прогнозируемое значение показателя,
@@ -368,7 +368,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
           </p>
         </section>
 
-        <aside className="glass-panel shap-insights">
+        <aside className="shap-insights glass-panel">
           <h2 className="home-section-title">Ключевые инсайты</h2>
           <p className="home-section-subtitle">
             Автоматически выделенные драйверы роста и факторы снижения по текущему показателю.
@@ -404,7 +404,7 @@ export const DashboardsPage = observer(function DashboardsPage() {
         </aside>
       </section>
 
-      <section className="glass-panel" style={{ marginTop: 18, padding: '14px 18px 16px' }}>
+      <section className="glass-panel glass-panel" style={{ marginTop: 18, padding: '14px 18px 16px' }}>
         <h2 className="home-section-title">Расширенная аналитика</h2>
         <p className="home-section-subtitle">
           Дополнительные инструменты анализа: сценарии, корреляции, декомпозиция временного ряда

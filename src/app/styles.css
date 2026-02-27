@@ -37,8 +37,23 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI',
     sans-serif;
   background: radial-gradient(circle at top left, #e3f2fd 0, #f8fafc 40%, #eef2ff 100%);
+  background-image: url('https://img.freepik.com/free-photo/blue-abstract-gradient-wave-wallpaper_53876-108364.jpg?t=st=1772193207~exp=1772196807~hmac=6e73b05ab78c486d1044afeac3f14586426caf46cfa6470d55ab04e5ceda754f&w=1480');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+}
+
+.home-page-with-bg {
+  background-image: url('https://img.freepik.com/free-photo/blue-abstract-gradient-wave-wallpaper_53876-108364.jpg?t=st=1772193207~exp=1772196807~hmac=6e73b05ab78c486d1044afeac3f14586426caf46cfa6470d55ab04e5ceda754f&w=1480');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 #root {
@@ -70,6 +85,15 @@ body {
   border: 1px rgba(255, 255, 255, 0.178) solid;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(var(--blur-strong));
+}
+
+.glass-panel.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(5px);
 }
 
 .btn {
@@ -168,6 +192,15 @@ body {
   box-sizing: border-box;
   border-radius: 0 0 24px 24px;
   backdrop-filter: blur(var(--blur-soft));
+}
+
+.app-header.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
 }
 
 .app-header-inner {
@@ -596,6 +629,8 @@ body {
   gap: 32px;
 }
 
+
+
 .hero-section {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
@@ -858,18 +893,21 @@ body {
   border: 1px solid transparent;
   background-clip: padding-box, border-box;
   backdrop-filter: blur(18px);
+  
 }
 
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+  
 }
 
 .metric-item {
   padding: 8px 10px;
   border-radius: 16px;
   background: rgba(248, 250, 252, 0.9);
+  border: 1px solid rgba(175, 175, 175, 0.432);
 }
 
 .metric-label {
@@ -899,6 +937,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
+  
 }
 
 .timeline-step {
@@ -1058,6 +1097,22 @@ body {
   gap: 18px;
 }
 
+.dashboard-forecast-cards.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.123), rgba(255, 255, 255, 0.151))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(5px);
+}
+
+.dashboard-forecast-cards.glass-panel:hover {
+  backdrop-filter: blur(10px);
+}
+.dashboard-forecast-cards.glass-panel {
+  transition: backdrop-filter 0.3s ease;
+}
+
 .dashboard-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1065,9 +1120,11 @@ body {
   align-items: flex-end;
 }
 
+
 .dashboard-filter-group {
   min-width: 180px;
 }
+
 
 .dashboard-filter-label {
   font-size: 11px;
@@ -1118,12 +1175,14 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 12px;
+
 }
 
 .forecast-card {
   padding: 10px 10px 8px;
   border-radius: 16px;
-  background: rgba(248, 250, 252, 0.95);
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(175, 175, 175, 0.432);
 }
 
 .forecast-card-year {
@@ -1159,12 +1218,14 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+  
 }
 
 .dashboard-kpi {
   padding: 8px 10px;
   border-radius: 14px;
-  background: rgba(248, 250, 252, 0.95);
+  background: rgba(248, 250, 252, 0);
+  border: 1px solid rgba(175, 175, 175, 0.432);
 }
 
 .dashboard-kpi-label {
@@ -1193,6 +1254,23 @@ body {
 
 .dashboard-chart-panel {
   padding: 14px 16px 12px;
+}
+
+.dashboard-chart-panel.glass-panel {
+
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.123), rgba(255, 255, 255, 0.151))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(5px);
+}
+
+.dashboard-chart-panel.glass-panel:hover {
+  backdrop-filter: blur(10px);
+}
+.dashboard-chart-panel.glass-panel {
+  transition: backdrop-filter 0.3s ease;
 }
 
 .dashboard-main-chart {
@@ -1239,6 +1317,22 @@ body {
   padding: 14px 16px 12px;
 }
 
+.shap-panel.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.123), rgba(255, 255, 255, 0.151))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(5px);
+}
+
+.shap-panel.glass-panel:hover {
+  backdrop-filter: blur(10px);
+}
+.shap-panel.glass-panel {
+  transition: backdrop-filter 0.3s ease;
+}
+
 .shap-chart-wrapper {
   height: 260px;
 }
@@ -1251,6 +1345,15 @@ body {
 
 .shap-insights {
   padding: 14px 16px 12px;
+}
+
+.shap-insights.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.123), rgba(255, 255, 255, 0.151))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(5px);
 }
 
 .shap-insights-grid {
@@ -1301,7 +1404,10 @@ body {
   border-radius: 16px;
   background: rgba(248, 250, 252, 0.95);
   font-size: 12px;
+  border: 1px solid rgba(175, 175, 175, 0.432);
 }
+
+
 
 .advanced-title {
   font-weight: 600;
@@ -1786,6 +1892,7 @@ body {
   background: rgba(248, 250, 252, 0.95);
   border-radius: 14px;
   padding: 8px 10px;
+  border: 1px solid rgba(214, 214, 214, 0.534);
 }
 
 .update-title {
@@ -1928,6 +2035,8 @@ body {
     flex-direction: column;
     align-items: stretch;
   }
+
+
 
   .advanced-grid {
     grid-template-columns: minmax(0, 1fr);
