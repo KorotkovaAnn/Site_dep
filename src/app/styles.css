@@ -67,7 +67,7 @@ body {
 .glass-panel {
   background: var(--bg-elevated);
   border-radius: var(--radius-large);
-  border: 1px solid var(--border-glass);
+  border: 1px rgba(255, 255, 255, 0.178) solid;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(var(--blur-strong));
 }
@@ -668,22 +668,61 @@ body {
   overflow: hidden;
 }
 
+.hero-panel.glass-panel,
+.hero-visual.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
+}
+
+
+
+.capabilities-metrics-panel.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
+}
+
+
 .hero-grid {
   position: absolute;
   inset: -40px;
   background-image: radial-gradient(circle at top left, rgba(59, 130, 246, 0.2), transparent),
-    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.25), transparent);
+    radial-gradient(circle at bottom right, rgb(138, 92, 246), transparent);
   opacity: 0.8;
+}
+
+.hero-visual .hero-grid {
+  opacity: 0;
 }
 
 .hero-overlay-card {
   position: relative;
   z-index: 1;
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(15, 23, 42, 0.877);
   border-radius: 22px;
   padding: 14px 16px 12px;
   color: #e5e7eb;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.205);
+}
+
+.hero-visual .hero-overlay-card + .hero-overlay-card {
+  margin-top: 20px;
+}
+
+.hero-visual-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .hero-overlay-title {
@@ -802,6 +841,25 @@ body {
   box-shadow: var(--shadow-subtle);
 }
 
+.metrics-panel.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
+}
+
+.timeline-section.glass-panel {
+
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
+}
+
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -848,7 +906,7 @@ body {
   padding: 10px 10px 10px 10px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(243, 243, 243, 0.952);
 }
 
 .timeline-number {
@@ -889,6 +947,15 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+}
+
+.quick-actions.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
 }
 
 .quick-action-button {
@@ -934,6 +1001,15 @@ body {
   padding: 16px 18px 14px;
 }
 
+.tech-stack.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
+}
+
 .tech-columns {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -949,19 +1025,31 @@ body {
 
 .tech-column-title {
   font-weight: 600;
+  font-size: 14px;
 }
 
 .tech-pill {
   padding: 6px 8px;
   border-radius: 999px;
-  background: rgba(248, 250, 252, 0.95);
+  background: #ffffff;
   border: 1px solid rgba(226, 232, 240, 0.9);
+  font-size: 14px;
 }
 
 .updates-faq {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
   gap: 24px;
+
+}
+
+.updates-timeline.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
 }
 
 .dashboard-grid {
@@ -1712,6 +1800,15 @@ body {
 
 .faq-panel {
   padding: 16px 18px 14px;
+}
+
+.faq-panel.glass-panel {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.295), rgba(255, 255, 255, 0.452))
+      border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(226, 232, 240, 0.137)) border-box;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(18px);
 }
 
 .faq-item {

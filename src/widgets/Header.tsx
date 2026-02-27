@@ -1,8 +1,8 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
+import { Box, Button } from '@mui/material'
 
 import { NotificationCenter } from './NotificationCenter.tsx'
-import {useRootStore} from "../stores/rootStore.tsx";
 
 const navItems: { to: string; label: string }[] = [
   { to: '/', label: 'Главная' },
@@ -24,7 +24,6 @@ const breadcrumbMap: Record<string, string> = {
 }
 
 export const Header = observer(function Header() {
-  const { ui } = useRootStore()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -33,26 +32,29 @@ export const Header = observer(function Header() {
   const breadcrumbLabel = breadcrumbMap[breadcrumbPath] ?? 'Главная'
 
   return (
-    <header className="app-header glass-panel">
-      <div className="app-header-inner">
-        <div className="app-header-left">
-          <button
+    <Box component="header" className="app-header glass-panel">
+      <Box className="app-header-inner">
+        <Box className="app-header-left">
+          <Button
             type="button"
             className="logo-area"
             onClick={() => navigate('/')}
+            color="inherit"
+            disableRipple
+            sx={{ p: 0, minWidth: 'auto' }}
           >
-            <div className="logo-mark">
+            <Box className="logo-mark">
               <span className="logo-bar logo-bar-1" />
               <span className="logo-bar logo-bar-2" />
               <span className="logo-bar logo-bar-3" />
-            </div>
-            <div className="logo-text">
+            </Box>
+            <Box className="logo-text">
               <span className="logo-title">REGION AI FORECAST</span>
               <span className="logo-subtitle">B2G платформа мониторинга</span>
-            </div>
-          </button>
+            </Box>
+          </Button>
 
-          <nav className="app-nav">
+          <Box component="nav" className="app-nav">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -64,51 +66,29 @@ export const Header = observer(function Header() {
                 {item.label}
               </NavLink>
             ))}
-          </nav>
-        </div>
+          </Box>
+        </Box>
 
-        <div className="app-header-right">
-          <div className="language-switcher" aria-label="Переключение языка">
-            <button
-              type="button"
-              className={`pill-button pill-button-small${
-                ui.language === 'ru' ? ' pill-button-active' : ''
-              }`}
-              onClick={() => ui.setLanguage('ru')}
-            >
-              RU
-            </button>
-            <button
-              type="button"
-              className={`pill-button pill-button-small${
-                ui.language === 'en' ? ' pill-button-active' : ''
-              }`}
-              onClick={() => ui.setLanguage('en')}
-            >
-              EN
-            </button>
-          </div>
-
+        <Box className="app-header-right">
           <NotificationCenter />
 
-          <button type="button" className="btn btn-outline btn-small">
+          <Button
+            variant="outlined"
+            size="small"
+            sx={{
+              borderRadius: 999,
+              px: 2,
+              py: 0.75,
+              textTransform: 'none',
+              fontWeight: 600,
+              fontSize: 13,
+            }}
+          >
             Войти
-          </button>
-        </div>
-      </div>
-
-      <div className="app-header-breadcrumbs">
-        <span className="breadcrumb-root" onClick={() => navigate('/')}>
-          Главная
-        </span>
-        {breadcrumbPath !== '/' ? (
-          <>
-            <span className="breadcrumb-separator">›</span>
-            <span className="breadcrumb-current">{breadcrumbLabel}</span>
-          </>
-        ) : null}
-      </div>
-    </header>
+          </Button>
+        </Box>
+      </Box>
+    </Box>
   )
 })
 
